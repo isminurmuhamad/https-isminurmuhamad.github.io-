@@ -13,7 +13,11 @@
       crossorigin="anonymous"
     />
 
+    <!-- Icon Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -26,7 +30,7 @@
   </head>
   <body>
     <!-- Hero -->
-    <section class="et-hero-tabs">
+    <section id="hero" class="et-hero-tabs">
       <img
         src="img/ismi.jpeg"
         alt="Ismi Nur Muhamad"
@@ -34,7 +38,7 @@
         class="rounded-circle img-thumbnail"
       />
       <h1>Ismi Nur Muhamad</h1>
-      <h3>Web Development</h3>
+      <h3></h3>
       <div class="et-hero-tabs-container">
         <!-- <a class="et-hero-tab" href="#tab-home">ES6</a> -->
         <a class="et-hero-tab" href="#tab-about">About</a>
@@ -47,92 +51,18 @@
 
     <!-- Main -->
     <main class="et-main">
-      <!-- <section class="et-slide" id="tab-es6">
-        <h1>ES6</h1>
-        <h3>something about es6</h3>
-      </section>
-      <section class="et-slide" id="tab-flexbox">
-        <h1>Flexbox</h1>
-        <h3>something about flexbox</h3>
-      </section>
-      <section class="et-slide" id="tab-react">
-        <h1>React</h1>
-        <h3>something about react</h3>
-      </section>
-      <section class="et-slide" id="tab-angular">
-        <h1>Angular</h1>
-        <h3>something about angular</h3>
-      </section>
-      <section class="et-slide" id="tab-other">
-        <h1>Other</h1>
-        <h3>something about other</h3>
-      </section> -->
-
-      <!-- Navbar -->
-      <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#home">Ismi Nur Muhamad</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-      <!-- Akhir Navbar -->
-
-      <!-- Hero -->
-      <!-- <section class="hero bg-gradient">
-        <div class="container-fluid text-center">
-          <img
-            src="img/ismi.png"
-            alt="Ismi Nur Muhamad"
-            width="200"
-            class="rounded-circle img-thumbnail"
-          />
-          <h1 class="display-5 fw-bold">Ismi Nur Muhamad</h1>
-          <p class="fs-4 justify-content-center">Web Development</p>
-        </div>
-      </section> -->
-      <!-- Akhir Hero -->
-
       <!-- About -->
       <section id="tab-about" class="et-slide">
         <div class="container">
           <div class="row text-center mb-3">
             <div class="col">
-              <h1>About Me</h1>
+              <h1 data-aos="flip-up" data-aos-once="true">About Me</h1>
             </div>
           </div>
           <div class="row justify-content-center fs-5 text-center">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay="400" data-aos-once="true">
               <h3>
-                hello, I'm Ismi, I'm a web developer who is ready to help you in
-                <strong>realizing your dream website.</strong>
+                Hello, I'm Ismi, I'm a web developer who is ready to help you in realizing your dream website.
               </h3>
             </div>
             <!-- <div class="col-md-4">
@@ -169,6 +99,8 @@
                       <img
                       src="img/ananda.png"
                       class="card-img-top"
+                      data-aos="zoom-in"
+                      data-aos-delay="100"
                       alt="kursus ananda"
                       />
                       <div class="card-body">
@@ -310,9 +242,9 @@
           <a>
 
       <!-- Github -->
-      <a class="btn fs-2 btn-floating m-1" href="https://github.com/isminurmuhamad" role="button">
+      <!-- <a class="btn fs-2 btn-floating m-1" href="https://github.com/isminurmuhamad" role="button">
           <i class="bi bi-github"></i>
-        </a>
+        </a> -->
     </section>
         </div>
     <!-- Section: Social media -->
@@ -325,6 +257,26 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+
+      gsap.from('#hero img', { duration: 1.5, opacity: 0, y: -100 });
+      gsap.from('#hero h1', {duration: 1, delay: 1.3, opacity: 0, x:-100, ease: "back"});
+      gsap.to('#hero h3', {duration: 1.5, delay: 3, text: "Web Development"});
+      gsap.from('.et-hero-tabs-container', {duration: 1, delay: 3.3, opacity: 0, y: 100});
+      
+    </script>
+
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyTaMHqBzVV94VKXQ4ABNDr76ho6YexYFkd1XZNvrrZHoCI2HfPjZGVy8WC6dG2qZ90TQ/exec';
